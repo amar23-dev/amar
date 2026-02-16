@@ -2,91 +2,40 @@ import { BookOpen, Lightbulb, GraduationCap } from 'lucide-react';
 
 const About = () => {
   const highlights = [
-    {
-      icon: <GraduationCap className="w-6 h-6" />,
-      title: 'GPA 3.8/4.0',
-      description: 'Fokus pada Logika Matematika & Komputasi',
-    },
-    {
-      icon: <BookOpen className="w-6 h-6" />,
-      title: '20+ Proyek',
-      description: 'Aplikasi Web, Simulasi Sains, & Tools',
-    },
-    {
-      icon: <Lightbulb className="w-6 h-6" />,
-      title: 'Problem Solver',
-      description: 'Analisis masalah dengan pendekatan Fisika & IT',
-    },
+    { icon: <GraduationCap />, title: 'GPA 3.8/4.0', description: 'Logika Matematika & Komputasi' },
+    { icon: <BookOpen />, title: '20+ Proyek', description: 'Web, Simulasi Sains, & Tools' },
+    { icon: <Lightbulb />, title: 'Problem Solver', description: 'Pendekatan Fisika & IT' },
   ];
 
   return (
-    <section 
-      id="about" 
-      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      /* GANTI URL DI BAWAH DENGAN GAMBAR BACKGROUND PILIHANMU */
-      style={{ backgroundImage: "url('sensitive.jpeg')" }}
-    >
-      
-      {/* OVERLAY: Lapisan ini sangat penting agar teks tetap terbaca jelas */}
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-sm z-0"></div>
+    <section id="about" className="py-24 relative overflow-hidden bg-slate-900">
+      {/* Background Image with Parallax & Dark Overlay */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <img src="/foto_latarbelakang.jpeg" className="w-full h-full object-cover grayscale-[50%]" alt="bg" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900 z-0"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">About Me</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full"></div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image Section (Foto Profil Kamu) */}
-          <div className="relative group">
-            <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-            
-            <div className="relative bg-white rounded-2xl overflow-hidden aspect-square border-4 border-white shadow-2xl">
-              <img 
-                src="/foto_profil.jpeg" 
-                alt="Profil Mahasiswa Teknik Informatika"
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-              />
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative group mx-auto lg:mx-0">
+            <div className="absolute -inset-4 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-blue-500/40 transition duration-1000"></div>
+            <div className="relative border-2 border-white/10 rounded-3xl p-3 backdrop-blur-md bg-white/5 shadow-2xl overflow-hidden aspect-square w-full max-w-[450px]">
+              <img src="/foto_profil.jpeg" className="rounded-2xl w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Amar Fiqih" />
             </div>
           </div>
 
-          {/* Text Section */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-3xl font-extrabold text-gray-900 mb-3">
-                Bridging Science & Technology
-              </h3>
-              <p className="inline-block px-4 py-1.5 bg-blue-600 text-white text-sm font-bold rounded-lg shadow-md">
-                Informatics Engineering Student
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-gray-700 text-lg leading-relaxed font-medium">
-                Saya adalah mahasiswa Teknik Informatika yang menggabungkan kekuatan logika 
-                <span className="font-bold text-blue-700"> Matematika dan prinsip Fisika </span> 
-                ke dalam pengembangan perangkat lunak.
-              </p>
-
-              <p className="text-gray-700 text-lg leading-relaxed">
-                Dengan pengalaman membangun lebih dari 20 proyek, saya fokus pada pembuatan solusi 
-                digital yang presisi dan berperforma tinggi.
-              </p>
-            </div>
-
-            {/* Highlights Grid */}
-            <div className="grid sm:grid-cols-3 gap-4 pt-4">
-              {highlights.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-5 bg-white/60 backdrop-blur-md rounded-2xl shadow-sm border border-white/50 hover:border-blue-400 hover:shadow-xl transition-all duration-300 group/card"
-                >
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 text-blue-600 rounded-xl mb-4 group-hover/card:bg-blue-600 group-hover/card:text-white transition-colors duration-300">
-                    {item.icon}
-                  </div>
-                  <h4 className="font-bold text-gray-900 text-sm mb-1">{item.title}</h4>
-                  <p className="text-xs text-gray-600 leading-tight font-medium">{item.description}</p>
+          <div className="text-white space-y-8">
+            <h2 className="text-4xl font-extrabold tracking-tight">Bridging <span className="text-blue-400">Science</span> & Technology</h2>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              Mahasiswa Teknik Informatika yang menggabungkan <span className="text-blue-400 font-semibold italic">Matematika & Fisika</span> ke dalam pengembangan software berkualitas tinggi.
+            </p>
+            
+            <div className="grid sm:grid-cols-3 gap-4">
+              {highlights.map((item, i) => (
+                <div key={i} className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all group">
+                  <div className="text-blue-400 mb-3 transform group-hover:scale-110 transition-transform">{item.icon}</div>
+                  <h4 className="font-bold text-sm">{item.title}</h4>
+                  <p className="text-xs text-slate-400 mt-1 leading-tight">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -96,5 +45,3 @@ const About = () => {
     </section>
   );
 };
-
-export default About;
